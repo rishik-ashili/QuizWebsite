@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Quiz Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <h1>Secure Quiz Platform</h1>
+            <div id="timer" class="hidden">⏳ <span id="time">00:00</span></div>
+        </div>
+
+        <!-- CSV Upload Section
+        <div id="upload-section" class="card">
+            <h2>Upload Quiz CSV</h2>
+            <input type="file" id="csvInput" accept=".csv">
+            <button class="primary-btn" onclick="startQuiz()">Start Quiz</button>
+        </div> -->
+
+        <!-- Welcome Section -->
+        <div id="welcome-section" class="card">
+            <button class="primary-btn" onclick="showCreateQuiz()">Create Quiz</button>
+            <button class="primary-btn" onclick="showAttemptQuiz()">Attempt Quiz</button>
+            <button class="primary-btn" onclick="showSignIn()">Sign In</button>
+        </div>
+
+
+        <!-- Create Quiz Section -->
+        <div id="create-quiz-section" class="card hidden">
+            <h2>Create New Quiz</h2>
+            <input type="text" id="quiz-id" placeholder="Enter Quiz ID">
+            <input type="number" id="quiz-time" placeholder="Time limit (minutes)">
+            <input type="text" id="quiz-username" placeholder="Your Username">
+            <input type="password" id="quiz-password" placeholder="Your Password">
+            <input type="file" id="csvInput" accept=".csv">
+            <button class="primary-btn" onclick="uploadQuiz()">Upload Quiz</button>
+        </div>
+
+        <!-- Attempt Quiz Section -->
+        <div id="attempt-quiz-section" class="card hidden">
+            <h2>Attempt Quiz</h2>
+            <input type="text" id="attempt-quiz-id" placeholder="Enter Quiz ID">
+            <input type="text" id="participant-name" placeholder="Your Name">
+            <button class="primary-btn" onclick="loadQuiz()">Start Quiz</button>
+        </div>
+        <!-- Add Sign In Section -->
+        <div id="signin-section" class="card hidden">
+            <h2>Creator Sign In</h2>
+            <input type="text" id="signin-username" placeholder="Username">
+            <input type="password" id="signin-password" placeholder="Password">
+            <button class="primary-btn" onclick="signIn()">Sign In</button>
+        </div>
+
+
+        <!-- Quiz Section -->
+        <div id="quiz-section" class="hidden">
+            <div class="quiz-header">
+                <div id="question-nav"></div>
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                </div>
+            </div>
+
+            <div class="question-card card">
+                <div id="question-container"></div>
+                <div class="navigation-buttons">
+                    <button class="secondary-btn" onclick="previousQuestion()">← Previous</button>
+                    <button class="primary-btn" onclick="nextQuestion()">Next →</button>
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+        </div>
+
+        <div id="creator-dashboard" class="card hidden">
+            <h2>Your Quizzes</h2>
+            <div id="quiz-results"></div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" class="hidden card"></div>
+
+        <!-- Cheat Warning -->
+        <div id="cheat-warning" class="hidden">
+            ⚠️ Unauthorized action detected! Remaining attempts: <span id="remaining-attempts">1</span>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

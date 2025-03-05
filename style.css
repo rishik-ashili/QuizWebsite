@@ -1,0 +1,281 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f5f5f5;
+  --danger-color: #ff4b4b;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+#welcome-section {
+  text-align: center;
+  padding: 40px;
+}
+
+#welcome-section button {
+  margin: 15px;
+  padding: 20px 40px;
+  font-size: 1.2rem;
+}
+
+#create-quiz-section,
+#attempt-quiz-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#create-quiz-section input,
+#attempt-quiz-section input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#timer {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.secondary-btn {
+  background-color: var(--secondary-color);
+  color: #333;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.question-card {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#question-container {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.options {
+  margin: 25px 0;
+}
+
+.options label {
+  display: block;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.options label:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}
+
+input[type='radio']:checked + label {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+#progress {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+#question-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.nav-btn {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-btn.current {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.nav-btn.answered {
+  background-color: #cce5ff;
+}
+
+#cheat-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--danger-color);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Add these styles */
+.submit-btn {
+  background-color: var(--danger-color);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  background-color: #ff3636;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.result-item {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.result-item.correct {
+  background-color: #e6ffe6;
+  border: 1px solid #4caf50;
+}
+
+.result-item.incorrect {
+  background-color: #ffe6e6;
+  border: 1px solid #ff5252;
+}
+
+.quiz-result {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.attempt {
+  padding: 8px;
+  margin: 5px 0;
+  background-color: #f8f9fa;
+}
+
+input[type='password'] {
+  font-family: 'Arial';
+  letter-spacing: 2px;
+}
+
+.secondary-btn {
+  margin-top: 15px;
+}
+
+/* Add to style.css */
+#creator-dashboard {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.attempt {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.participant {
+  flex: 2;
+}
+
+.score {
+  flex: 1;
+  text-align: center;
+}
+
+.time {
+  flex: 1;
+  text-align: right;
+}
+
+.attempts-list {
+  margin-top: 15px;
+}
