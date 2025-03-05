@@ -42,8 +42,8 @@ Secure Quiz Platform is a web-based application that allows users to create, man
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/secure-quiz-platform.git
-cd secure-quiz-platform
+https://github.com/rishik-ashili/QuizWebsite
+cd QuizWebsite
 ```
 
 ### 2. Supabase Setup
